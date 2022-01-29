@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../AppContext';
 import NavBar from './NavBar';
 
@@ -7,6 +7,7 @@ export const InicioScreen = ({productosProps}) => {
     const value = useContext(AppContext);
     let {setTablaProductos, tablaProductos,productos, setProductos} = value.state;
 
+    
    
     return (
         <>

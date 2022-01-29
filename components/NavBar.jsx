@@ -22,7 +22,7 @@ const [busqueda, setBusqueda] = useState("");
 useEffect(()=>{
     setProductos(productosProps);
     setTablaProductos(productosProps);
-},[])
+},[productosProps])
 
 // console.log(productos.title);
 // console.log(productos);
