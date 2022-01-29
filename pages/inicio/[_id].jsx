@@ -31,7 +31,7 @@ export async  function getStaticPaths() {
         const paths = productos.map(({ _id }) => ({ params: { _id: `${_id}` } }));
         return {
             paths,
-            fallback: false
+            fallback: 'blocking'
         }
     } catch (error) {
         console.log(error);
