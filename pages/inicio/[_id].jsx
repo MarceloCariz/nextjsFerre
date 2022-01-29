@@ -1,19 +1,20 @@
 import React from 'react';
 
 export default function productos({ productos }) {
-
-    return (
+    const {title, price, urlImage} = productos;
+    return ( 
         <>
             {
-                productos.map(({ _id,title, price, urlImage }) => (
-                    <div key={_id}>
-                        <h1>{title}</h1>
-                        <h1>{price}</h1>
-                        <img src={urlImage} alt="" />
-                    </div>
+                // productos.map(({ _id,title, price, urlImage }) => (
+                //     <div key={_id}>
+                //         
+                //     </div>
 
-                ))
+                // ))
             }
+            <h1>{title}</h1>
+        <h1>{price}</h1>
+        <img src={urlImage} alt="" />
 
         </>
 
@@ -26,7 +27,7 @@ export async function getStaticPaths() {
     try {
         const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products/')
         const { productos } = await res.json();
-        const paths = productos.map(({ title }) => ({ params: { title: title } }));
+        const paths = productos.map(({ _id }) => ({ params: { _id: `${_id}` } }));
         return {
             paths,
             fallback: false
@@ -36,9 +37,9 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
     try {
-        const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products/' + params.title)
+        const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products/' + params._id)
         const { productos } = await res.json();
         return {
             props: {
