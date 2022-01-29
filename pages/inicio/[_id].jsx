@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function productos({ productos }) {
     const {title, price, urlImage} = productos;
+    console.log("[_id]"+productos);
     return ( 
         <>
             {
