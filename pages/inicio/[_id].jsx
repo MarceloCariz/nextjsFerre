@@ -46,7 +46,7 @@ export async function getStaticProps({ params }) {
             props: {
                 productos
             },
-            revalidate: 60
+            revalidate: 10
         }
     } catch (error) {
         console.log(error);
