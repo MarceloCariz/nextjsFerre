@@ -16,14 +16,16 @@ export default function index({productosProps}) {
 }
 
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     try {
         const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products')
         const { productos:productosProps } = await res.json();
         return {
             props: {
                 productosProps
-            }
+            },
+            revalidate: 60
+
         }
     } catch (error) {
         console.log(error);
