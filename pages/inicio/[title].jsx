@@ -36,7 +36,7 @@ export async function getStaticPaths() {
     }
 }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     try {
         const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products/' + params.title)
         const { productos } = await res.json();
