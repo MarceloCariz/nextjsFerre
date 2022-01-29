@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 export default function productos({ productos }) {
     const {title, price, urlImage} = productos;
@@ -24,7 +24,7 @@ export default function productos({ productos }) {
 }
 
 
-export async function getStaticPaths() {
+export async  function getStaticPaths() {
     try {
         const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products/')
         const { productos } = await res.json();
@@ -45,7 +45,8 @@ export async function getStaticProps({ params }) {
         return {
             props: {
                 productos
-            }
+            },
+            revalidate: 10
         }
     } catch (error) {
         console.log(error);
