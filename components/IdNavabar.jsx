@@ -16,12 +16,12 @@ const IdNavabar = () => {
         <div className='flex space-x-4 flex-row  md:pb-2 md:flex-1 md:flex'>
             <div className=' flex  flex-row  font-semibold text-white md:pb-2 md:hidden space-x-2 '>
                 <FontAwesomeIcon className='  text-xl text-red-500' icon={faMapMarkerAlt} />
-                <a className="text-md" href='https://goo.gl/maps/gSJ3rXaMxuzDrGVr6' target="_blank">Encuentranos aqui</a>
+                <Link className="text-md"  rel="noopener noreferrer" href='https://goo.gl/maps/gSJ3rXaMxuzDrGVr6' target="_blank">Encuentranos aqui</Link>
             </div>
         </div>
         <div className='md:pb-2 font-md text-white md:flex space-x-2 hidden'>
             <FontAwesomeIcon className=' text-2xl text-red-500' icon={faMapMarkerAlt} />
-            <a className="text-lg" href='https://goo.gl/maps/gSJ3rXaMxuzDrGVr6' target="_blank">Encuentranos aqui</a>
+            <Link className="text-lg" href='https://goo.gl/maps/gSJ3rXaMxuzDrGVr6' target="_blank">Encuentranos aqui</Link>
         </div>
 
     </div>

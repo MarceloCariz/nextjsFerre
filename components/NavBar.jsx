@@ -18,7 +18,6 @@ export default function NavBar({ productosProps }) {
     let { setTablaProductos, tablaProductos, productos, setProductos } = value.state;
     const { activeSearch, setAtiveSearch } = value.active;
 
-    // const [productos, setProductos] = useState([]);
     const [busqueda, setBusqueda] = useState("");
     // const peticionGet = async()=>{
     //     await axios.get('https://backend-ferreteria.herokuapp.com/api/products/')
@@ -73,9 +72,9 @@ export default function NavBar({ productosProps }) {
                 <div className='h-1 bg-red-600'></div>
                 <div className='h-24 bg-blue-600 flex flex-col space-y-4 md:flex-row md:justify-center md:items-center md:space-x-32  px-4 md:px-64 py-2'>
                     <div className='text-white font-bold text-2xl sm:text-3xl'>
-                        <a href='/inicio'>
+                        <Link href='/inicio'>
                             FerreteriaPortales
-                        </a >
+                        </Link >
                         <hr className="border-red-600 border-2 bg-red-600 w-52 md:w-64" />
                     </div>
                     <div className='flex space-x-4 flex-row  md:pb-2 md:flex-1 md:flex'>
@@ -90,7 +89,7 @@ export default function NavBar({ productosProps }) {
                     </div>
                     <div className='md:pb-2 font-md text-white md:flex space-x-2 hidden'>
                         <FontAwesomeIcon className=' text-2xl text-red-500' icon={faMapMarkerAlt} />
-                        <a className="text-lg" href='https://goo.gl/maps/gSJ3rXaMxuzDrGVr6' target="_blank">Encuentranos aqui</a>
+                        <Link className="text-lg"   rel="noopener noreferrer"  href='https://goo.gl/maps/gSJ3rXaMxuzDrGVr6' target="_blank">Encuentranos aqui</Link>
                     </div>
 
                 </div>
