@@ -14,8 +14,10 @@ export const InicioScreen = ({ productosProps }) => {
       "https://backend-ferreteria.herokuapp.com/api/products/categoria"
     );
     const { categorias } = await res.json();
-
-    setCategory(categorias);
+    let result = categorias.filter((item, index)=>{
+         return categorias.indexOf(item) === index;
+  })
+    setCategory(result);
   }, [setCategory]);
 
 
@@ -26,7 +28,8 @@ export const InicioScreen = ({ productosProps }) => {
       <hr className=" mx-4 mt-2"/>
       <div className="sm:mt-24  mt-4 w-42 md:mx-32 text-center mx-4 justify-items-centers md:grid-cols-4 sm:grid-cols-4 grid grid-cols-2 gap-4">
         {category.map((category, index) => (
-          <div className="bg-white border-2 border-gray-400 " key={index}>
+            
+          <div className="bg-white border-2 cursor-pointer border-gray-400 " key={index}>
             <Link href={`/inicio/categoria/${category}`}>
               <h1>{category}</h1>
             </Link>

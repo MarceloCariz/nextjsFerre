@@ -10,7 +10,8 @@ export default function categorias({ productos }) {
   return (
     <>
       <IdNavabar />
-      <h1 className="mx-4 text-3xl text-center font-bold">{productos[0].category}</h1>
+      <h1 className="mx-4 mt-2 text-3xl text-gray-700 text-center font-bold">{productos[0].category}</h1>
+      <hr className="mx-32" />
       <div className='sm:mt-24  mt-4 w-42 md:mx-32  mx-4 justify-items-centers md:grid-cols-9 sm:grid-cols-4 grid grid-cols-2 gap-4 '>
 
       {productos.map(({ _id, title, price, urlImage }) => (
