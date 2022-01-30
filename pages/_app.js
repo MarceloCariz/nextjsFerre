@@ -7,9 +7,11 @@ import { useState } from 'react';
 function MyApp({ Component, pageProps }) {
   const [tablaProductos,  setTablaProductos] = useState([]);
   const [productos, setProductos] = useState([]);
+  const [activeSearch, setAtiveSearch] = useState(null);
+
 
   return (
-  <AppContext.Provider value={{state:{tablaProductos, setTablaProductos, productos, setProductos}}} >
+  <AppContext.Provider value={{state:{tablaProductos, setTablaProductos, productos, setProductos},active:{activeSearch,setAtiveSearch}}} >
     <Component {...pageProps} />
 
 

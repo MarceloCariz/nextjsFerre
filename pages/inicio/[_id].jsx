@@ -1,21 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
+import AppContext from '../../AppContext';
+import IdNavabar from '../../components/IdNavabar';
+import { InicioScreen } from '../../components/InicioScreen';
+import NavBar from '../../components/NavBar';
 
 export default function productos({ productos }) {
-    const {title, price, urlImage} = productos;
-    console.log("[_id]"+title+price+urlImage);
-    return ( 
-        <>
-            {
-                // productos.map(({ _id,title, price, urlImage }) => (
-                //     <div key={_id}>
-                //         
-                //     </div>
+    const { title, price, urlImage, descripcion,  category , stock} = productos;
 
-                // ))
-            }
-            <h1>{title}</h1>
-        <h1>{price}</h1>
-        <img src={urlImage} alt="" />
+   
+   
+    return (
+        <>
+            <IdNavabar />
+            <div className='mt-4 mx-4'>
+                <img className='object-contain  rounded-md' src={urlImage} alt="" />
+                <div className='mx-4 flex flex-col space-y-2  justify-center text-2xl '>
+                     <h3 className='font-semibold'> Nombre: <span className='font-normal' >{title}</span></h3>
+                     <h3 className='font-semibold' >Precio: <span className='font-normal' >$ {price}</span></h3>
+                     <h3 className='font-semibold'> Categoria: <span  className='font-normal'>{category}</span></h3>
+                     <p className='font-semibold'>stock: <span className='font-normal'>{stock}</span></p>
+                     <p className='font-semibold'>Descripcion: <span className='font-normal'>{descripcion}</span></p>
+
+
+                </div>
+     
+                {/* <p>{Descripcion}</p> */}
+            </div>
+
+
+
 
         </>
 
@@ -24,7 +37,7 @@ export default function productos({ productos }) {
 }
 
 
-export async  function getStaticPaths() {
+export async function getStaticPaths() {
     try {
         const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products/')
         const { productos } = await res.json();

@@ -1,6 +1,7 @@
 
 
 import { InicioScreen } from "../../components/InicioScreen";
+import NavBar from "../../components/NavBar";
 
 export default function index({productosProps}) {
     // const value = useContext(AppContext);
@@ -9,8 +10,11 @@ export default function index({productosProps}) {
     
     return (
         <>
-
+        <NavBar productosProps={productosProps}/>
+            <div className="bg-gray-250">
             <InicioScreen productosProps={productosProps}/>
+
+            </div>
         </>
     );
 }
