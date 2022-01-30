@@ -1,5 +1,6 @@
 
 
+import Footer from "../../components/Footer";
 import { InicioScreen } from "../../components/InicioScreen";
 import NavBar from "../../components/NavBar";
 
@@ -15,6 +16,7 @@ export default function index({productosProps}) {
             <InicioScreen productosProps={productosProps}/>
 
             </div>
+            <Footer/>
         </>
     );
 }
