@@ -1,6 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import AppContext from '../AppContext';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
+
+
+
+
+
 export default function NavBar({productosProps}) {
 
 
@@ -50,8 +59,19 @@ const filtrar = (terminoBusqueda)=>{
 
   return (
       <>
-        <input onChange={handleChange} type="text" name="" value={busqueda} id="" />
-        <button>Buscar</button>
+      <div className='h-24 bg-blue-600 flex space-y-4 flex-col px-4 py-2'>
+          <div className='text-white font-bold text-2xl'>
+              <h1>FerreteriaPortales</h1>
+              <hr className="border-red-600 border-2 bg-red-600 w-52"/>
+          </div>
+          <div className=''>
+             <FontAwesomeIcon className='text-white' icon={faSearch} />
+            <input className='ml-2 rounded-lg' onChange={handleChange} type="text" name="" value={busqueda} id="" />
+            <button className='hidden'>Buscar</button>
+          </div>
+    
+      </div>
+        
       </>
   );
 }
