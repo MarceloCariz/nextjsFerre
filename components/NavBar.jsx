@@ -66,6 +66,8 @@ export default function NavBar({ productosProps }) {
         // setBusqueda(productos[0].title)
         if(productos.length > 1){
              setProductos(productos)
+            router.push(`/inicio/resultado`);
+
 
         }else{
             router.push(`/inicio/${productos[0].title}`)
@@ -103,11 +105,11 @@ export default function NavBar({ productosProps }) {
                         </Link >
                         <hr className="border-red-600 border-2 bg-red-600 w-52 md:w-64" />
                     </div>
-                    <div className='flex space-x-4 flex-row  md:pb-2 md:flex-1 md:flex'>
-                        <div className=' sm:flex-1 sm:flex'>
-                            {/* <FontAwesomeIcon className='text-white text-sm mt-1 md:text-xl' icon={faSearch} /> */}
+                    <div className='flex  justify-between  flex-row  md:pb-2 md:flex-1 md:flex'>
+                        <div className='flex sm:flex-1 sm:flex'>
+                                <FontAwesomeIcon className='text-white text-sm mt-1 md:text-xl' icon={faSearch} />
                             <form className='' onSubmit={handleSubmit} >
-                                <input className='ml-2 pb-50 md:h-8 w-36 text-sm sm:text-lg h-6 rounded-lg sm:w-full pl-4' onChange={handleChange} type="text" placeholder='Busca tu producto' name="" value={busqueda} id="" />
+                                <input className='ml-2 pb-50 md:h-8 w-40 text-sm sm:text-lg h-6 rounded-lg sm:w-full pl-4' onChange={handleChange} type="text" placeholder='Busca tu producto' name="" value={busqueda} id="" />
                                 <button  type='submit' className="hidden" >Buscar</button>
                             </form >
 

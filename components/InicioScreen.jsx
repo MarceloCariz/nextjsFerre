@@ -3,6 +3,7 @@ import { Router, useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../AppContext";
 import NavBar from "./NavBar";
+import Resultado from "./Resultado";
 
 export const InicioScreen = ({ productosProps }) => {
   const value = useContext(AppContext);
@@ -41,11 +42,14 @@ export const InicioScreen = ({ productosProps }) => {
       </div>
 
       {/* <NavBar productosProps={productosProps} /> */}
-      <div className="sm:mt-24  mt-4 w-42 md:mx-32  mx-4 justify-items-centers md:grid-cols-9 sm:grid-cols-4 grid grid-cols-2 gap-4 ">
+      <div className="sm:mt-24  mt-4  md:mx-32  ml-4 justify-items-centers md:grid-cols-9 sm:grid-cols-4 overflow-x-auto  grid  auto-cols-max grid-flow-col  grid-rows-2 gap-4    ">
+
         {productos.map(({ _id, title, price, urlImage }) => (
+          ///cards
+
           <div
             key={_id}
-            className="transition ease-in-out delay-150 hover:-translate-y-3 shadow-2xl text-center rounded-xl border border-gray-200  py-2 flex flex-col  items-center "
+            className=" w-74  transition ease-in-out delay-150 hover:-translate-y-3 shadow-2xl text-center rounded-xl border border-gray-200  py-2   items-center "
           >
             <Link href={`/inicio/${title}`}>
               <img
@@ -65,10 +69,11 @@ export const InicioScreen = ({ productosProps }) => {
               </button>
             </Link>
           </div>
+          
         ))}
-        {/* <Link href={"/inicio"}>Next</Link>
-         */}
-      </div>
+        
+     </div>
+
     </>
   );
 };
