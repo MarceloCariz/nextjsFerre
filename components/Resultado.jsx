@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Link from 'next/link';
 import AppContext from '../AppContext';
-import { useEffect } from 'react/cjs/react.development';
+
 export default function Resultado (){
 
     const value = useContext(AppContext);
@@ -11,6 +11,7 @@ export default function Resultado (){
         setProductos(productos)
 
     },[setProductos])
+
   return (<>
     <h1 className='text-left mx-4 text-2xl font-semibold text-gray-700'>Resultados</h1>
    {/* <div className="sm:mt-24  mt-4 w-42 md:mx-32  mx-4 justify-items-centers md:grid-cols-9 sm:grid-cols-4 grid grid-cols-2 gap-4 "> */}

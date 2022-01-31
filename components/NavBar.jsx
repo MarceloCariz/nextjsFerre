@@ -65,7 +65,8 @@ export default function NavBar({ productosProps }) {
         // const {title} = productos;
         // setBusqueda(productos[0].title)
         if(productos.length > 1){
-             setProductos(productos)
+            setProductos(productos)
+            // filtrar(productos)
             router.push(`/inicio/resultado`);
 
 
@@ -80,7 +81,9 @@ export default function NavBar({ productosProps }) {
 
     const filtrar = (terminoBusqueda) => {
 
-
+        if(!tablaProductos){
+            return;
+        }
         let resultadoBusqueda = tablaProductos.filter((elemento) => {
             if (elemento.title.toString().toLowerCase().includes(terminoBusqueda.toLowerCase())) {
                 return elemento

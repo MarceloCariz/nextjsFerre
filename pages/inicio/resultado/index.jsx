@@ -6,8 +6,8 @@ import Resultado from '../../../components/Resultado';
 export default function index () {
   return (
       <>
-      <NavBar/>
-        <Resultado/>
+        <NavBar/>
+          <Resultado/>
         <Footer/>
       </>
   );
