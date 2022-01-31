@@ -29,11 +29,14 @@ export default function NavBar({ productosProps }) {
     //     })
     // }
 
+    console.log(productosProps);
+    console.log(productos);
+
 
     useEffect(() => {
         setProductos(productosProps);
         setTablaProductos(productosProps);
-    }, [productosProps])
+    }, [productosProps,setProductos])
 
     // console.log(productos.title);
     // console.log(productos);
