@@ -15,7 +15,7 @@ const Footer = () => {
             Donde encontrarnos
           </h1>
           <iframe
-            className="sm:w-auto sm:h-60  w-48 h-40   "
+            className="sm:w-auto sm:h-60  w-44 h-40   "
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26598.180686399373!2d-70.57459656044918!3d-33.559284499999976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d134c5025889%3A0xba54a9a83e335a5!2sFerreteria%20Portales!5e0!3m2!1ses-419!2scl!4v1643220550776!5m2!1ses-419!2scl"
             allowFullScreen=""
             loading="lazy"
