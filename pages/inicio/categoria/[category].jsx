@@ -76,7 +76,7 @@ export async function getStaticPaths() {
 
     return {
       paths,
-      fallback: "blocking",
+      fallback: true,
     };
   } catch (error) {
     console.log(error);
