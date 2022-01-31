@@ -76,7 +76,7 @@ export async function getStaticPaths() {
 
     return {
       paths,
-      fallback: true,
+      fallback: "blocking",
     };
   } catch (error) {
     console.log(error);
@@ -94,7 +94,7 @@ export async function getStaticProps({ params }) {
       props: {
         productosCategoria,
       },
-      revalidate: 10,
+      revalidate: 1,
     };
   } catch (error) {
     console.log(error);
