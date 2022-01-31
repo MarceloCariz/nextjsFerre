@@ -1,5 +1,4 @@
 
-
 import Footer from "../../components/Footer";
 import { InicioScreen } from "../../components/InicioScreen";
 import NavBar from "../../components/NavBar";
@@ -7,13 +6,14 @@ import NavBar from "../../components/NavBar";
 export default function index({productosProps}) {
     // const value = useContext(AppContext);
     // let {setTablaProductos, tablaProductos,productos, setProductos} = value.state;
-
+  
     
     return (
         <>
         <NavBar productosProps={productosProps}/>
             <div className="bg-gray-250">
             <InicioScreen productosProps={productosProps}/>
+           
 
             </div>
             <Footer/>
@@ -24,11 +24,11 @@ export default function index({productosProps}) {
 
 export async function getStaticProps() {
     try {
-        const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products')
+        const res = await fetch('https://backend-ferreteria.herokuapp.com/api/products?limit=10')
         const { productos:productosProps } = await res.json();
         return {
             props: {
-                productosProps
+                productosProps  
             },
             revalidate: 60
 

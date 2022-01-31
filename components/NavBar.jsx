@@ -4,6 +4,7 @@ import AppContext from '../AppContext';
 import { faSearch, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 
 
@@ -15,7 +16,7 @@ export default function NavBar({ productosProps }) {
 
 
     const value = useContext(AppContext);
-    let { setTablaProductos, tablaProductos, productos, setProductos } = value.state;
+    let { setTablaProductos, tablaProductos,  setProductos } = value.state;
     const { activeSearch, setAtiveSearch } = value.active;
 
     const [busqueda, setBusqueda] = useState("");
@@ -29,14 +30,14 @@ export default function NavBar({ productosProps }) {
     //     })
     // }
 
-    console.log(productosProps);
-    console.log(productos);
+    // console.log(productosProps);
+    // console.log(productos);
 
 
     useEffect(() => {
         setProductos(productosProps);
         setTablaProductos(productosProps);
-    }, [productosProps,setProductos])
+    }, [productosProps, setProductos, setTablaProductos])
 
     // console.log(productos.title);
     // console.log(productos);
@@ -51,7 +52,29 @@ export default function NavBar({ productosProps }) {
             setAtiveSearch(true)
         }
     }
+    /////buscador
+    // useEffect(async()=>{
+    
+    //     console.log(productos);
+    // },[])
+    const handleSubmit = async(e) => {
+        e.preventDefault()
+        const res = await fetch(`https://backend-ferreteria.herokuapp.com/api/products/busqueda?q=${busqueda}`)
+        const { productos } = await res.json();
+        setAtiveSearch(true)
+        // const {title} = productos;
+        // setBusqueda(productos[0].title)
+        if(productos.length > 1){
+             setProductos(productos)
 
+        }else{
+            router.push(`/inicio/${productos[0].title}`)
+
+        }
+        // console.log(title);
+    }
+
+    const router = useRouter();
 
     const filtrar = (terminoBusqueda) => {
 
@@ -82,8 +105,12 @@ export default function NavBar({ productosProps }) {
                     </div>
                     <div className='flex space-x-4 flex-row  md:pb-2 md:flex-1 md:flex'>
                         <div className=' sm:flex-1 sm:flex'>
-                            <FontAwesomeIcon className='text-white text-md mt-1 md:text-xl' icon={faSearch} />
-                            <input className='ml-2 md:h-8 w-36 text-sm sm:text-lg h-6 rounded-lg sm:w-full pl-4' onChange={handleChange} type="text" placeholder='Busca tu producto' name="" value={busqueda} id="" />
+                            {/* <FontAwesomeIcon className='text-white text-sm mt-1 md:text-xl' icon={faSearch} /> */}
+                            <form className='' onSubmit={handleSubmit} >
+                                <input className='ml-2 pb-50 md:h-8 w-36 text-sm sm:text-lg h-6 rounded-lg sm:w-full pl-4' onChange={handleChange} type="text" placeholder='Busca tu producto' name="" value={busqueda} id="" />
+                                <button  type='submit' className="hidden" >Buscar</button>
+                            </form >
+
                         </div>
                         <div className=' flex  flex-row  font-semibold text-white md:pb-2 md:hidden space-x-2 '>
                             <FontAwesomeIcon className='  text-xl text-red-500' icon={faMapMarkerAlt} />
@@ -92,7 +119,7 @@ export default function NavBar({ productosProps }) {
                     </div>
                     <div className='md:pb-2 font-md text-white md:flex space-x-2 hidden'>
                         <FontAwesomeIcon className=' text-2xl text-red-500' icon={faMapMarkerAlt} />
-                        <Link className="text-lg"   rel="noopener noreferrer"  href='https://goo.gl/maps/gSJ3rXaMxuzDrGVr6' target="_blank">Encuentranos aqui</Link>
+                        <Link className="text-lg" rel="noopener noreferrer" href='https://goo.gl/maps/gSJ3rXaMxuzDrGVr6' target="_blank">Encuentranos aqui</Link>
                     </div>
 
                 </div>

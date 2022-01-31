@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Router, useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../AppContext";
 import NavBar from "./NavBar";
@@ -14,21 +15,23 @@ export const InicioScreen = ({ productosProps }) => {
       "https://backend-ferreteria.herokuapp.com/api/products/categoria"
     );
     const { categorias } = await res.json();
-    let result = categorias.filter((item, index)=>{
-         return categorias.indexOf(item) === index;
-  })
+    let result = categorias.filter((item, index) => {
+      return categorias.indexOf(item) === index;
+    })
     setCategory(result);
   }, [setCategory]);
 
+  //////////////////Paginacion/////////////////////////////
+  // console.log(productos);
 
 
   return (
     <>
-    <h1 className="text-2xl font-semibold text-left mx-4 mt-4">Categorias</h1>
-      <hr className=" mx-4 mt-2"/>
+      <h1 className="text-2xl font-semibold text-left mx-4 mt-4">Categorias</h1>
+      <hr className=" mx-4 mt-2" />
       <div className="sm:mt-24  mt-4 w-42 md:mx-32 text-center mx-4 justify-items-centers md:grid-cols-4 sm:grid-cols-4 grid grid-cols-2 gap-4">
         {category.map((category, index) => (
-            
+
           <div className="bg-white border-2 cursor-pointer border-gray-400 " key={index}>
             <Link href={`/inicio/categoria/${category}`}>
               <h1>{category}</h1>
@@ -63,6 +66,8 @@ export const InicioScreen = ({ productosProps }) => {
             </Link>
           </div>
         ))}
+        {/* <Link href={"/inicio"}>Next</Link>
+         */}
       </div>
     </>
   );

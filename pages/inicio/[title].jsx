@@ -11,7 +11,7 @@ export default function productos({ productos }) {
    
     return (
         <>
-            <IdNavabar />
+            <NavBar productosProps={productos} />
             {
                 productos.map(({_id, title, price, urlImage, descripcion,  category , stock})=>(
             <div key={_id} className='mt-4 mx-4'>
