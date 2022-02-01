@@ -25,14 +25,7 @@ export const InicioScreen = ({ productosProps }) => {
 
   //////////////////Paginacion/////////////////////////////
   // console.log(productos);
-  const refreshData = () => {
-      router.replace(router.asPath);
-  }
-
-  useEffect(()=>{
-    refreshData()
-
-  },[setProductos])
+  
 
   return (
     <>

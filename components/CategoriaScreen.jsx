@@ -2,18 +2,29 @@
 
 
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../AppContext';
 
-export default function CategoriaScreen({productosCategoria}) {
-    const value = useContext(AppContext);
-    let { setTablaProductos, tablaProductos, productos, setProductos } = value.state;
-     const {category} =productosCategoria[0];
-    
-    console.log(category);
+export default function CategoriaScreen({ productosCategoria }) {
+  const value = useContext(AppContext);
+  let { setTablaProductos, tablaProductos, productos, setProductos } = value.state;
+
+  const router = useRouter();
+
+  const { category } = productosCategoria[0];
+  const refreshData = () => {
+    router.replace(router.asPath);
+  }
+
+  useEffect(() => {
+    refreshData()
+
+  }, [])
+  console.log(1);
   return (
-      <>
-    {productosCategoria.map(({ _id, title, price, urlImage }) => (
+    <>
+      {productosCategoria.map(({ _id, title, price, urlImage }) => (
         <div
           key={_id}
           className="transition ease-in-out delay-150 hover:-translate-y-3 shadow-2xl text-center rounded-xl border border-gray-200  py-2 flex flex-col  items-center "
@@ -37,7 +48,7 @@ export default function CategoriaScreen({productosCategoria}) {
           </Link>
         </div>
       ))}
-      </>
+    </>
 
   );
 };
