@@ -5,12 +5,15 @@ import Link from 'next/link';
 import React, { useContext } from 'react';
 import AppContext from '../AppContext';
 
-export default function CategoriaScreen() {
+export default function CategoriaScreen({productosCategoria}) {
     const value = useContext(AppContext);
     let { setTablaProductos, tablaProductos, productos, setProductos } = value.state;
+     const {category} =productosCategoria[0];
+    
+    console.log(category);
   return (
       <>
-    {productos.map(({ _id, title, price, urlImage }) => (
+    {productosCategoria.map(({ _id, title, price, urlImage }) => (
         <div
           key={_id}
           className="transition ease-in-out delay-150 hover:-translate-y-3 shadow-2xl text-center rounded-xl border border-gray-200  py-2 flex flex-col  items-center "

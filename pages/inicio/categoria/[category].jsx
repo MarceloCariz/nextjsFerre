@@ -19,7 +19,7 @@ export default function categorias({ productosCategoria}) {
       <h1 className="mx-4 mt-2 text-3xl text-gray-700 text-center font-bold">{productosCategoria[0].category}</h1>
       <hr className="mx-32" />
       <div className='sm:mt-24  mt-4 w-42 md:mx-32  mx-4 justify-items-centers md:grid-cols-9 sm:grid-cols-4 grid grid-cols-2 gap-4 '>
-        <CategoriaScreen/>
+        <CategoriaScreen  productosCategoria={ productosCategoria}/>
       {/* {productos.map(({ _id, title, price, urlImage }) => (
         <div
           key={_id}

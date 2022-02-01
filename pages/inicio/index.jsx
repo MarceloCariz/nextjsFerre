@@ -24,6 +24,7 @@ export default function index({productosProps}) {
         <meta property="og:type" content="website" />
         <meta name="robots" content= "index, follow" />
       </Head>
+      
         <NavBar productosProps={productosProps}/>
         <main>
         <div className="bg-gray-250">
