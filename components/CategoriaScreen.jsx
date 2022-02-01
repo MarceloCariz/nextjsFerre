@@ -12,16 +12,18 @@ export default function CategoriaScreen({ productosCategoria }) {
 
   const router = useRouter();
 
-  const { category } = productosCategoria[0];
-  const refreshData = () => {
-    router.replace(router.asPath);
-  }
+  // const { category } = productosCategoria[0];
+  // const refreshData = () => {
+  //   router.replace(router.asPath);
+  // }
 
-  useEffect(() => {
-    refreshData()
+  // useEffect(() => {
+  //   refreshData()
 
-  }, [])
-  console.log(1);
+  // }, [])
+
+ 
+  console.log(productosCategoria);
   return (
     <>
       {productosCategoria.map(({ _id, title, price, urlImage }) => (

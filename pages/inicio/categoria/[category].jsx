@@ -64,37 +64,37 @@ export default function categorias({ productosCategoria}) {
   );
 }
 
-export async function getStaticPaths() {
-  try {
-    const res = await fetch(
-      "https://backend-ferreteria.herokuapp.com/api/products/categoria/"
-    );
-    const { categorias } = await res.json();
-    const paths = categorias.map((categoria) => ({
-      params: { category: `${categoria}` },
-    }));
+// export async function getStaticPaths() {
+//   try {
+//     const res = await fetch(
+//       "https://backend-ferreteria.herokuapp.com/api/products/categoria/"
+//     );
+//     const { categorias } = await res.json();
+//     const paths = categorias.map((categoria) => ({
+//       params: { category: `${categoria}` },
+//     }));
 
-    return {
-      paths,
-      fallback: "blocking",
-    };
-  } catch (error) {
-    console.log(error);
-  }
-}
+//     return {
+//       paths,
+//       fallback: "blocking",
+//     };
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ query }) {
   try {
+      const category = query.category
     const res = await fetch(
-      "https://backend-ferreteria.herokuapp.com/api/products/categoria/" +
-        params.category
+      `https://backend-ferreteria.herokuapp.com/api/products/categoria/${category}` 
     );
     const { productos:productosCategoria } = await res.json();
+   
     return {
       props: {
-        productosCategoria,
-      },
-      revalidate: 1,
+          productosCategoria 
+      }
     };
   } catch (error) {
     console.log(error);
