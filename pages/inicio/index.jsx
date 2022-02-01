@@ -46,8 +46,8 @@ export async function getServerSideProps() {
         return {
             props: {
                 productosProps  
-            },
-            revalidate: 60
+            }
+            // revalidate: 60
 
         }
     } catch (error) {
