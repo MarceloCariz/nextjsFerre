@@ -43,7 +43,7 @@ export const InicioScreen = ({ productosProps }) => {
 
           <div className="bg-white border-2 cursor-pointer border-gray-400 " key={index}>
             <Link href={`/inicio/categoria/${category}`}>
-              <h1>{category}</h1>
+              <h2>{category}</h2>
             </Link>
           </div>
         ))}
