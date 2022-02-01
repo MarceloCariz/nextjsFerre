@@ -12,25 +12,19 @@ export default function Home() {
     
     <div className={styles.container}>
       <Head>
-        <title>FerreteriaPortales</title>
-        <meta name="description" content="Materiales de construccion" />
-       
+        <title>Ferreteria Portales | Diego Portales | Puente Alto</title>
+        <meta name="description" content="Ferreteria portales, nos ubicamos en santiago puente alto" />
+        <meta property='og:title' content='Ferreteria Portales | Diego Portales | Puente Alto'/>
+        <meta name="title" content="Ferreteria Portales | Diego Portales | Puente Alto" />
+        <meta property="og:url" content="http://www.ferreteriasportales.com"/>
+      
+        <meta property="og:site_name" content="Ferretería Portales"/>
+        <meta property="og:type" content="website" />
       </Head>
 
       
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+    
     </div>
   )
 }

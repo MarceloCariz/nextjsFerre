@@ -11,11 +11,14 @@ export default function index({productosProps}) {
     return (
         <>
         <NavBar productosProps={productosProps}/>
-            <div className="bg-gray-250">
+        <main>
+        <div className="bg-gray-250">
             <InicioScreen productosProps={productosProps}/>
            
 
             </div>
+        </main>
+           
             <Footer/>
         </>
     );
