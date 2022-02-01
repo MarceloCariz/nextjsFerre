@@ -21,12 +21,13 @@ export default function CategoriaScreen({ productosCategoria }) {
   //   refreshData()
 
   // }, [])
+  
 
  
-  console.log(productosCategoria);
+  // console.log(productosCategoria);
   return (
     <>
-      {productosCategoria.map(({ _id, title, price, urlImage }) => (
+      {productos.map(({ _id, title, price, urlImage }) => (
         <div
           key={_id}
           className="transition ease-in-out delay-150 hover:-translate-y-3 shadow-2xl text-center rounded-xl border border-gray-200  py-2 flex flex-col  items-center "
