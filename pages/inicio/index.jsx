@@ -21,7 +21,7 @@ export default function index({productosProps}) {
         <link rel="canonical" href="https://ferreteriaportales.com/"/>
         <meta property="og:site_name" content="Ferretería Portales"/>
         <meta property="og:type" content="website" />
-        <meta name="robots" content= "index, follow">
+        <meta name="robots" content= "index, follow" />
       </Head>
         <NavBar productosProps={productosProps}/>
         <main>
