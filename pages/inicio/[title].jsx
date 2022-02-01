@@ -19,7 +19,7 @@ export default function productos({ productos }) {
 
                     <img className='object-contain  rounded-md' src={urlImage} alt="" />
                     <div className='mx-4 flex flex-col space-y-2  justify-center text-2xl '>
-                         <h3 className='font-semibold'> Nombre: <span className='font-normal' >{title}</span></h3>
+                         <h1 className='font-semibold'> Nombre: <span className='font-normal' >{title}</span></h1>
                          <h3 className='font-semibold' >Precio: <span className='font-normal' >$ {price}</span></h3>
                          <h3 className='font-semibold'> Categoria: <span  className='font-normal'>{category}</span></h3>
                          <p className='font-semibold'>stock: <span className='font-normal'>{stock}</span></p>

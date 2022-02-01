@@ -11,15 +11,17 @@ export default function index({productosProps}) {
     
     return (
         <>
-        <Head>
+     <Head>
         <title>Ferreteria Portales | Diego Portales | Puente Alto</title>
-        <meta name="description" content="Ferreteria portales, nos ubicamos en santiago puente alto" />
+        <meta name="description" content="Ferreteria portales, Aridos, Materiales, nos encargamos de atender a todos nuestro clientes
+        con el fin de entregarles una solucion. Nos ubicamos en Av diego portales 4497" />
         <meta property='og:title' content='Ferreteria Portales | Diego Portales | Puente Alto'/>
         <meta name="title" content="Ferreteria Portales | Diego Portales | Puente Alto" />
         <meta property="og:url" content="http://www.ferreteriasportales.com"/>
-      
+        <link rel="canonical" href="https://ferreteriaportales.com/"/>
         <meta property="og:site_name" content="Ferretería Portales"/>
         <meta property="og:type" content="website" />
+        <meta name="robots" content= "index, follow">
       </Head>
         <NavBar productosProps={productosProps}/>
         <main>
