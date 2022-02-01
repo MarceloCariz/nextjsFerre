@@ -32,12 +32,16 @@ export default function NavBar({ productosProps }) {
 
     // console.log(productosProps);
     // console.log(productos);
-
+    const router = useRouter();
+    const refreshData = () => {
+        router.replace(router.asPath);
+      }
 
     useEffect(() => {
         setProductos(productosProps);
         setTablaProductos(productosProps);
-    }, [productosProps, setProductos, setTablaProductos])
+        refreshData()
+    }, [ setProductos, setTablaProductos])
 
     // console.log(productos.title);
     // console.log(productos);
@@ -77,7 +81,7 @@ export default function NavBar({ productosProps }) {
         // console.log(title);
     }
 
-    const router = useRouter();
+    // const router = useRouter();
 
     const filtrar = (terminoBusqueda) => {
 

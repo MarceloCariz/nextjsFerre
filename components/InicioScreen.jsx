@@ -9,7 +9,6 @@ export const InicioScreen = ({ productosProps }) => {
   const value = useContext(AppContext);
   let { setTablaProductos, tablaProductos, productos, setProductos } =
     value.state;
-
   const [category, setCategory] = useState([]);
   useEffect(async () => {
     const res = await fetch(
