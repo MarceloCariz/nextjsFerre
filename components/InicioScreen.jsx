@@ -7,6 +7,8 @@ import Resultado from "./Resultado";
 
 export const InicioScreen = ({ productosProps }) => {
   const value = useContext(AppContext);
+  const router = useRouter();
+
   let { setTablaProductos, tablaProductos, productos, setProductos } =
     value.state;
   const [category, setCategory] = useState([]);
@@ -23,7 +25,14 @@ export const InicioScreen = ({ productosProps }) => {
 
   //////////////////Paginacion/////////////////////////////
   // console.log(productos);
+  const refreshData = () => {
+      router.replace(router.asPath);
+  }
 
+  useEffect(()=>{
+    refreshData()
+
+  },[setProductos])
 
   return (
     <>

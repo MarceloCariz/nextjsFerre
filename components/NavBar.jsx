@@ -33,14 +33,12 @@ export default function NavBar({ productosProps }) {
     // console.log(productosProps);
     // console.log(productos);
     const router = useRouter();
-    const refreshData = () => {
-        router.replace(router.asPath);
-      }
+ 
+
 
     useEffect(() => {
         setProductos(productosProps);
         setTablaProductos(productosProps);
-        refreshData()
     }, [ setProductos, setTablaProductos])
 
     // console.log(productos.title);
