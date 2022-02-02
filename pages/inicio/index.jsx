@@ -13,10 +13,9 @@ export default function index({ productosProps }) {
 
             <NavBar productosProps={productosProps} />
             <main>
+                
                 <div className="bg-gray-250">
                     <InicioScreen productosProps={productosProps} />
-
-
                 </div>
             </main>
             <Footer />

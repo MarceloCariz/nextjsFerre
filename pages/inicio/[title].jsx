@@ -20,10 +20,12 @@ export default function productos({ productos }) {
                 productos.map(({ _id, title, price, urlImage, descripcion, category, stock }) => (
                     <div key={_id} className='mx-2  md:mt-12 md:mx-32 flex md:justify-center items-center  '>
 
-                        <div className='relative w-80 h-52 md:w-72 md:h-72 mr-8'>
-                            <Image src={urlImage} alt={`${title}`} layout='fill'  quality={20} objectFit='cover'  />
+                        {/* <div className='relative w-60 h-40 md:w-72 md:h-72 mr-8'> */}
+                            {/* <Image src={`${urlImage}`} alt={`${title}`} layout='responsive' width={80} height={80}  quality={20} objectFit='cover'  />
+                             */}
+                             <img className='object-cover  w-1/2 h-1/3  md:w-72 md:h-72  rounded-md' src={urlImage} alt={`${title}`} />
 
-                        </div>
+                        {/* </div> */}
 
                         <div className='mx-2 flex flex-col space-y-2 md:text-2xl justify-center text-md '>
                             <h1 className='font-semibold'> Nombre: <span className='font-normal' >{title}</span></h1>
