@@ -7,7 +7,11 @@ module.exports = {
         source: '/',
         destination: '/inicio',
         permanent: true
-      }
+      },
+      
     ]
-  }
+  },
+  images: {
+    domains: ['res.cloudinary.com'],
+  },
 }

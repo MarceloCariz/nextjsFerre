@@ -12,7 +12,7 @@ con el fin de entregarles una solucion. Nos ubicamos en Av diego portales 4497" 
                 <meta property='og:title' content='Ferreteria Portales | Diego Portales | Puente Alto' />
                 <meta name="title" content="Ferreteria Portales | Diego Portales | Puente Alto" />
                 <meta property="og:url" content="http://www.ferreteriasportales.com" />
-                <link rel="canonical" href="https://www.ferreteriasportales.com/" />
+                <link rel="canonical" href="https://www.ferreteriasportales.com" />
                 <meta property="og:site_name" content="Ferretería Portales" />
                 <meta property="og:type" content="website" />
                 <meta name="robots" content="index, follow" />
