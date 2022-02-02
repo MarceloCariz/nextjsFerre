@@ -47,7 +47,7 @@ export const InicioScreen = ({ productosProps }) => {
       </div>
 
       {/* <NavBar productosProps={productosProps} /> */}
-      <div className="sm:mt-12 md:mx-32 mx-4  md:grid-cols-7 sm:grid-cols-4 md:grid-rows-2 overflow-hidden grid  auto-cols-max grid-flow-col  grid-rows-2 gap-4    ">
+      <div className="sm:mt-12 md:mx-32 mx-2 pb-12 md:grid-cols-6 sm:grid-cols-4 md:grid-rows-2 overflow-x-auto grid  auto-cols-max grid-flow-col  grid-rows-2 gap-4    ">
 
         {productos.map(({ _id, title, price, urlImage }) => (
           ///cards

@@ -21,7 +21,7 @@ export default function productos({ productos }) {
                     <div key={_id} className='mx-2  md:mt-12 md:mx-32 flex md:justify-center items-center  '>
 
                         <div className='relative w-80 h-52 md:w-72 md:h-72 mr-8'>
-                            <Image src={urlImage} alt="" layout='fill' priority />
+                            <Image src={urlImage} alt={`${title}`} layout='fill'  quality={20} objectFit='cover' loading='eager' />
 
                         </div>
 
