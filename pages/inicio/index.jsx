@@ -1,6 +1,4 @@
 
-import { Html } from "next/document";
-import Head from "next/head";
 import Footer from "../../components/Footer";
 import { InicioScreen } from "../../components/InicioScreen";
 import NavBar from "../../components/NavBar";
@@ -12,15 +10,17 @@ export default function index({ productosProps }) {
 
     return (
         <>
-           
-                    <NavBar productosProps={productosProps} />
-                    <main>
-                        <div className="bg-gray-250">
-                            <InicioScreen productosProps={productosProps} />
+
+            <NavBar productosProps={productosProps} />
+            <main>
+                <div className="bg-gray-250">
+                    <InicioScreen productosProps={productosProps} />
 
 
-                        </div>
-                    </main>
+                </div>
+            </main>
+            <Footer />
+
 
 
 
