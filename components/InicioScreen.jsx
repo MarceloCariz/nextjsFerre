@@ -29,7 +29,7 @@ export const InicioScreen = ({ productosProps }) => {
 
   return (
     <>
-    <div className="md:mx-60">
+    <div className="md:mx-60  ">
       <div className="md:mx-32 mx-4"> 
       <h2 className="text-2xl  font-semibold text-left mt-4">Categorias</h2>
       <hr className=" w-32 mt-2" />

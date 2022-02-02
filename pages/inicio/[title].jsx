@@ -14,11 +14,13 @@ export default function productos({ productos }) {
     return (
         <>
             <NavBar productosProps={productos} />
+            <div className='h-96 relative mt-20'>
+
             {
                 productos.map(({ _id, title, price, urlImage, descripcion, category, stock }) => (
-                    <div key={_id} className='mt-4 mx-2  md:mt-12 md:mx-32 flex md:justify-center  '>
+                    <div key={_id} className='mx-2  md:mt-12 md:mx-32 flex md:justify-center items-center  '>
 
-                        <div className='relative w-48 h-44 md:w-72 md:h-72 mr-12'>
+                        <div className='relative w-80 h-52 md:w-72 md:h-72 mr-8'>
                             <Image src={urlImage} alt="" layout='fill' priority />
 
                         </div>
@@ -36,6 +38,8 @@ export default function productos({ productos }) {
 
                 ))
             }
+            </div>
+
             {/* <div className='mt-4 mx-4'> */}
             {/* <img className='object-contain  rounded-md' src={urlImage} alt="" />
                 <div className='mx-4 flex flex-col space-y-2  justify-center text-2xl '>
