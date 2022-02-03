@@ -5,7 +5,7 @@ module.exports = {
     return [
       {
         source: '/',
-        destination: '/inicio',
+        destination: "index.js",
         permanent: true
       },
       

@@ -1,10 +1,4 @@
-import Image from 'next/image';
-import React, { useContext, useEffect } from 'react';
-import AppContext from '../../AppContext';
-import Footer from '../../components/Footer';
-import IdNavabar from '../../components/IdNavabar';
-import { InicioScreen } from '../../components/InicioScreen';
-import NavBar from '../../components/NavBar';
+import Layout from '../../components/Layout';
 
 export default function productos({ productos }) {
     // const { title, price, urlImage, descripcion,  category , stock} = productos;
@@ -13,7 +7,11 @@ export default function productos({ productos }) {
 
     return (
         <>
-            <NavBar productosProps={productos} />
+            {/* <NavBar productosProps={productos} />
+             */}
+
+            <Layout productosProps={productos}>
+
             <div className='h-96 relative mt-20'>
 
             {
@@ -58,7 +56,8 @@ export default function productos({ productos }) {
             {/* </div> */}
 
 
-                <Footer />
+                {/* <Footer /> */}
+                </Layout>
 
         </>
 

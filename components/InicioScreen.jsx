@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Router, useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
@@ -39,7 +38,9 @@ export const InicioScreen = ({ productosProps }) => {
         {category.map((category, index) => (
 
           <div className="bg-white border-2 cursor-pointer border-gray-400 transition ease-in-out delay-100 hover:-translate-y-1 " key={index}>
-            <Link href={`/inicio/categoria/${category}`}  passHref>
+            {/* <Link href={`/inicio/categoria/${category}`}  passHref> */}
+            <Link href={`/producto/categoria/${category}`}  passHref>
+
               <h2>{category}</h2>
             </Link>
           </div>
@@ -56,9 +57,11 @@ export const InicioScreen = ({ productosProps }) => {
             key={_id}
             className=" w-74 mt-8   transition ease-in-out delay-150 hover:-translate-y-3 shadow-2xl text-center rounded-xl border border-gray-200    items-center "
           >
-            <Link href={`/inicio/${title}`}  passHref>
+            {/* <Link href={`/inicio/${title}`}  passHref> */}
+            <Link href={`/producto/${title}`}  passHref>
+
               <img
-                className="cursor-pointer object-cover rounded-md h-32 w-36"
+                className="cursor-pointer object-cover rounded-md h-32 w-auto"
                 src={urlImage}
                 alt={`imagen ${title}`}
               />
@@ -68,7 +71,9 @@ export const InicioScreen = ({ productosProps }) => {
               <h3 className="text-gray-800">{title}</h3>
               <p className="font-semibold">$ {price}</p>
             </div>
-            <Link href={`/inicio/${title}`}  passHref>
+            {/* <Link href={`/inicio/${title}`}  passHref> */}
+            <Link href={`/producto/${title}`}  passHref>
+
               <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 text-white rounded-lg bg-blue-600 px-4 py-2">
                 Ver mas
               </button>

@@ -1,10 +1,5 @@
-import Link from "next/link";
-import React, { useContext, useEffect } from "react";
-import AppContext from "../../../AppContext";
 import CategoriaScreen from "../../../components/CategoriaScreen";
-import Footer from "../../../components/Footer";
-import IdNavabar from "../../../components/IdNavabar";
-import NavBar from "../../../components/NavBar";
+import Layout from "../../../components/Layout";
 
 // import NavBar from '../../components/NavBar';
 
@@ -16,14 +11,16 @@ export default function categorias({ productosCategoria}) {
   return (
     <>
       {/* <IdNavabar /> */}
-      <NavBar productosProps= { productosCategoria }/>
+      <Layout productosProps= { productosCategoria }>
+
+      {/* <NavBar productosProps= { productosCategoria }/> */}
       <h2 className="mx-4 mt-2 text-3xl text-gray-700 text-center font-bold">{productosCategoria[0].category}</h2>
       <hr className="mx-32" />
       <div className='sm:mt-24  mt-4 w-42 md:mx-32  mx-4 justify-items-centers sm:grid-cols-4 md:grid-cols-9  grid grid-cols-2 gap-4 '>
         <CategoriaScreen  productosCategoria={ productosCategoria}/>
     
         </div>
-      <Footer/>
+      </Layout>
     </>
   );
 }

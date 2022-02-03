@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
 import AppContext from '../AppContext';
 import { faSearch, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -69,11 +68,11 @@ export default function NavBar({ productosProps }) {
         if (productos.length > 1) {
             setProductos(productos)
             // filtrar(productos)
-            router.push(`/inicio/resultado`);
+            router.push(`/producto/resultado`);
 
 
         } else {
-            router.push(`/inicio/${productos[0].title}`)
+            router.push(`/producto/${productos[0].title}`)
 
         }
         // console.log(title);
@@ -105,7 +104,7 @@ export default function NavBar({ productosProps }) {
                 <div className='h-1 bg-red-600'></div>
                 <div className='h-24 bg-blue-600 flex flex-col space-y-4 md:flex-row md:justify-center md:items-center md:space-x-32   px-4 md:px-64 py-2'>
                     <div className='text-white font-bold text-2xl sm:text-3xl'>
-                        <Link href='/inicio' passHref>
+                        <Link href='/' passHref>
                             <h1 className='cursor-pointer'>      FerreteriaPortales </h1>
                         </Link >
                         <hr className="border-red-600 border-2 bg-red-600 w-52 md:w-64" />
