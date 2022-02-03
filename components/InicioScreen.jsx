@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Router, useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
@@ -55,16 +56,20 @@ export const InicioScreen = ({ productosProps }) => {
 
           <div
             key={_id}
-            className=" w-74 mt-8   transition ease-in-out delay-150 hover:-translate-y-3 shadow-2xl text-center rounded-xl border border-gray-200    items-center "
+            className="  w-32 mt-8   transition ease-in-out delay-150 hover:-translate-y-3 shadow-2xl text-center rounded-xl border border-gray-200    items-center "
           >
             {/* <Link href={`/inicio/${title}`}  passHref> */}
             <Link href={`/producto/${title}`}  passHref>
 
-              <img
+              {/* <img
                 className="cursor-pointer object-cover rounded-md h-32 w-auto"
                 src={urlImage}
                 alt={`imagen ${title}`}
-              />
+              /> */}
+              <div className=" ">
+              <Image layout="responsive"  alt={`imagen ${title}`} objectFit="cover" loading="eager" quality={50} width={150} height={150} src={urlImage} />
+
+              </div>
             </Link>
 
             <div className="text-gray-800  text-center mb-2 flex flex-col space-y-2">
@@ -74,7 +79,7 @@ export const InicioScreen = ({ productosProps }) => {
             {/* <Link href={`/inicio/${title}`}  passHref> */}
             <Link href={`/producto/${title}`}  passHref>
 
-              <button className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 text-white rounded-lg bg-blue-600 px-4 py-2">
+              <button className="transition  ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 text-white rounded-lg bg-blue-600 px-4 py-2">
                 Ver mas
               </button>
             </Link>

@@ -114,7 +114,7 @@ export default function NavBar({ productosProps }) {
                         <div className='flex sm:flex-1 sm:flex'>
                             <FontAwesomeIcon className='text-white text-sm mt-1 md:text-xl' icon={faSearch} />
                             <form className='' onSubmit={handleSubmit} >
-                                <input className='ml-2 pb-50 md:h-8 w-40 text-sm sm:text-lg h-6 rounded-lg  sm:w-1/4 md:absolute pl-4' onChange={handleChange} type="text" placeholder='Busca tu producto' name="" value={busqueda} id="" />
+                                <input className='ml-2 pb-50 md:h-8 w-32 text-sm sm:text-lg h-6 rounded-lg  sm:w-1/4 md:absolute pl-4' onChange={handleChange} type="text" placeholder='Busca tu producto' name="" value={busqueda} id="" />
                                 <button type='submit' className="hidden" >Buscar</button>
                             </form >
 
