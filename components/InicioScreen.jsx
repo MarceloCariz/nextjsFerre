@@ -5,27 +5,27 @@ import React, { useContext, useEffect, useState } from "react";
 import AppContext from "../AppContext";
 
 
-export const InicioScreen = ({ productosProps }) => {
+export const InicioScreen = ({ productosProps, categorias }) => {
   const value = useContext(AppContext);
   const router = useRouter();
 
   let { setTablaProductos, tablaProductos, productos, setProductos } =
     value.state;
-  const [category, setCategory] = useState([]);
-  useEffect(async () => {
-    const res = await fetch(
-      "https://backend-ferreteria.herokuapp.com/api/products/categoria"
-    );
-    const { categorias } = await res.json();
-    let result = categorias.filter((item, index) => {
-      return categorias.indexOf(item) === index;
-    })
-    setCategory(result);
-  }, [setCategory]);
+  // const [category, setCategory] = useState([]);
+  // useEffect(async () => {
+  //   const res = await fetch(
+  //     "https://backend-ferreteria.herokuapp.com/api/products/categoria"
+  //   );
+  //   const { categorias } = await res.json();
+  //   let result = categorias.filter((item, index) => {
+  //     return categorias.indexOf(item) === index;
+  //   })
+  //   setCategory(result);
+  // }, [setCategory]);
 
   //////////////////Paginacion/////////////////////////////
   // console.log(productos);
-
+// console.log(categorias);
 
   return (
     <>
@@ -36,10 +36,10 @@ export const InicioScreen = ({ productosProps }) => {
       </div>
     
       <div className="sm:mt-12  mt-2 w-42 md:mx-32 text-center mx-4 justify-items-centers md:grid-cols-4 sm:grid-cols-4 grid grid-cols-2 gap-4">
-        {category.map((category, index) => (
+        {categorias.map((category, index) => (
 
           <div className="bg-white border-2 cursor-pointer border-gray-400 transition ease-in-out delay-100 hover:-translate-y-1 " key={index}>
-            {/* <Link href={`/inicio/categoria/${category}`}  passHref> */}
+        
             <Link href={`/producto/categoria/${category}`}  passHref>
 
               <h2>{category}</h2>
