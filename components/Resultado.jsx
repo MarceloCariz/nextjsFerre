@@ -7,7 +7,7 @@ export default function Resultado (){
     const value = useContext(AppContext);
     let {   setProductos, productos } = value.state;
     useEffect(()=>{
-        // let {productos} =value.state;
+        
         setProductos(productos)
 
     },[setProductos])
