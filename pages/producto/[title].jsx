@@ -12,16 +12,19 @@ export default function productos({ productos }) {
 
             <Layout productosProps={productos}>
 
-            <div className='h-96 relative mt-20'>
+            <div className='h-96 relative mt-10 md:mt-20'>
 
             {
                 productos.map(({ _id, title, price, urlImage, descripcion, category, stock }) => (
-                    <div key={_id} className='mx-2  md:mt-12 md:mx-32 flex md:justify-center items-center  '>
+                    <div key={_id} className='mx-2   md:mx-32 flex md:flex-row flex-col space-y-6 md:space-y-0 md:space-x-32 md:justify-center items-center  '>
 
                         {/* <div className='relative w-60 h-40 md:w-72 md:h-72 mr-8'> */}
                             {/* <Image src={`${urlImage}`} alt={`${title}`} layout='responsive' width={80} height={80}  quality={20} objectFit='cover'  />
                              */}
-                             <img className='object-cover  w-1/2 h-1/3  md:w-72 md:h-72  rounded-md' src={urlImage} alt={`${title}`} />
+                             <div className='w-44 h-auto  md:w-1/3 md:h-1/2'>
+                             <img className='object-contain     rounded-md' src={urlImage} alt={`${title}`} />
+
+                             </div>
 
                         {/* </div> */}
 
