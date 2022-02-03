@@ -12,28 +12,29 @@ export default function productos({ productos }) {
 
             <Layout productosProps={productos}>
 
-            <div className='h-96 relative mt-10 md:mt-20'>
+            <div className='h-96 relative mt-4 mb-40 md:mt-20 '>
 
             {
                 productos.map(({ _id, title, price, urlImage, descripcion, category, stock }) => (
-                    <div key={_id} className='mx-2   md:mx-32 flex md:flex-row flex-col space-y-6 md:space-y-0 md:space-x-32 md:justify-center items-center  '>
+                    <div key={_id} className='mx-2    md:mx-32 flex md:flex-row flex-col space-y-6 md:space-y-0 md:space-x-32 md:justify-center items-center  '>
 
                         {/* <div className='relative w-60 h-40 md:w-72 md:h-72 mr-8'> */}
                             {/* <Image src={`${urlImage}`} alt={`${title}`} layout='responsive' width={80} height={80}  quality={20} objectFit='cover'  />
                              */}
-                             <div className='w-44 h-auto  md:w-1/3 md:h-1/2'>
+                             <div className='w-64 h-auto  md:w-1/3 md:h-1/2'>
                              <img className='object-contain     rounded-md' src={urlImage} alt={`${title}`} />
 
                              </div>
 
                         {/* </div> */}
 
-                        <div className='mx-2 flex flex-col space-y-2 md:text-2xl justify-center text-md '>
-                            <h1 className='font-semibold'> Nombre: <span className='font-normal' >{title}</span></h1>
+                        <div className='mx-2 text-justify flex flex-col space-y-2 md:text-2xl justify-center text-xl '>
+                        <h1 className='font-semibold'> Nombre: <span className='font-normal' >{title}</span></h1>
+
                             <h3 className='font-semibold' >Precio: <span className='font-normal' >$ {price}</span></h3>
                             <h3 className='font-semibold'> Categoria: <span className='font-normal'>{category}</span></h3>
                             <p className='font-semibold'>stock: <span className='font-normal'>{stock}</span></p>
-                            <p className='font-semibold'>Descripcion: <span className='font-normal'>{descripcion}</span></p>
+                            <p className='font-semibold'>Descripcion: <span className='font-normal'> {descripcion}</span></p>
 
 
                         </div>
