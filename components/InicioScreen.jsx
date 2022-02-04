@@ -67,7 +67,7 @@ export const InicioScreen = ({ productosProps, categorias }) => {
                 alt={`imagen ${title}`}
               /> */}
               <div className=" ">
-              <Image layout="responsive"  alt={`imagen ${title}`} objectFit="cover" loading="eager" quality={50} width={150} height={150} src={urlImage} />
+              <Image layout="responsive"  alt={`imagen ${title}`} objectFit="cover" loading="eager" quality={50} width={150} height={150} src={urlImage} priority />
 
               </div>
             </Link>
