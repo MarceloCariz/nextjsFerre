@@ -7,7 +7,7 @@ export default function categorias({ productosCategoria}) {
   // const { title, price, urlImage, descripcion,  category , stock} = productos;
   // console.log(title);
   
-  console.log(productosCategoria[0]);
+  // console.log(productosCategoria[0]);
   return (
     <>
       {/* <IdNavabar /> */}
