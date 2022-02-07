@@ -14,7 +14,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
     <Head>
-    <title>Ferreteria Portales   Puente Alto  Av Diego Portales</title>
+    <title>FerreteriaPortales Materiales de construccion Puente Alto </title>
+    {/* <title>FerreteriaPortales Puente Alto Avenida Diego Portales</title> */}
+
                 
     </Head>
   <AppContext.Provider value={{state:{tablaProductos, setTablaProductos, productos, setProductos},active:{activeSearch,setAtiveSearch}}} >
