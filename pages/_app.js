@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Ferreteria Portales | Puente Alto | Materiales de construccion</title>
+        <title>Ferreteria Portales  |  Puente Alto  |  Materiales de construccion</title>
         {/* <title>FerreteriaPortales Puente Alto Avenida Diego Portales</title> */}
 
 
